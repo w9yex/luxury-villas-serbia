@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syncopate:wght@700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Fraunces", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-logo: "Syncopate", sans-serif;
+  
+  --color-warm-paper: #FBF8F3;
+  --color-warm-paper-dark: #F7F3EC;
+  --color-ink: #1A1A1A;
+  --color-ink-muted: #2B2B2B;
+  --color-accent: #C97A4A;
+  --color-gray-subtle: #8A8A8A;
+  --color-hairline: #E5E1D8;
+}
+
+/* Custom resets & base variables */
+:root {
+  --bg-primary: #FBF8F3;
+  --bg-secondary: #F7F3EC;
+  --text-primary: #1A1A1A;
+  --text-secondary: #8A8A8A;
+  --border-color: #E5E1D8;
+}
+
+/* Full Dark Theme Inversion colors */
+body.dark {
+  --bg-primary: #0B0A0A; /* Elegant Obsidian Black */
+  --bg-secondary: #141312; /* Rich dark-chocolate card backgrounds */
+  --text-primary: #F7F3EC; /* Light warm-paper text */
+  --text-secondary: #C5BFB7; /* Enhanced readability warm-gray/cream */
+  --border-color: #282624; /* Muted hairline borders */
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for premium look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Custom text shadow utilities for premium Hero legibility */
+.hero-title-shadow {
+  text-shadow: 0px 4px 30px rgba(0,0,0,0.55), 0px 2px 8px rgba(0,0,0,0.8);
+}
+.hero-desc-shadow {
+  text-shadow: 0px 2px 15px rgba(0,0,0,0.7), 0px 1px 5px rgba(0,0,0,0.85);
+}
+
+/* Full Dark Mode Dynamic Overrides for Hex-Style Classes */
+body.dark .bg-\[\#FBF8F3\] {
+  background-color: var(--bg-primary) !important;
+}
+body.dark .bg-\[\#FBF8F3\]\/90 {
+  background-color: rgba(11, 10, 10, 0.9) !important;
+}
+body.dark .bg-\[\#FBF8F3\]\/95 {
+  background-color: rgba(20, 19, 18, 0.95) !important;
+}
+body.dark .bg-\[\#F7F3EC\] {
+  background-color: var(--bg-secondary) !important;
+}
+body.dark .bg-\[\#F7F3EC\]\/50 {
+  background-color: rgba(20, 19, 18, 0.5) !important;
+}
+body.dark .bg-\[\#F7F3EC\]\/40 {
+  background-color: rgba(20, 19, 18, 0.4) !important;
+}
+body.dark .bg-\[\#F7F3EC\]\/30 {
+  background-color: rgba(20, 19, 18, 0.3) !important;
+}
+body.dark .bg-\[\#F7F3EC\]\/60 {
+  background-color: rgba(20, 19, 18, 0.6) !important;
+}
+body.dark .bg-\[\#FBF8F3\]\/60 {
+  background-color: rgba(11, 10, 10, 0.7) !important;
+}
+body.dark .bg-\[\#FBF8F3\]\/40 {
+  background-color: rgba(11, 10, 10, 0.5) !important;
+}
+
+/* Text color conversions */
+body.dark .text-\[\#1A1A1A\] {
+  color: var(--text-primary) !important;
+}
+body.dark .text-\[\#8A8A8A\] {
+  color: var(--text-secondary) !important;
+}
+body.dark .text-\[\#FBF8F3\]\/60 {
+  color: var(--text-secondary) !important;
+}
+
+/* Borders and dividers */
+body.dark .border-\[\#E5E1D8\] {
+  border-color: var(--border-color) !important;
+}
+body.dark .border-l {
+  border-left-color: var(--border-color) !important;
+}
+body.dark .border-t {
+  border-top-color: var(--border-color) !important;
+}
+body.dark .border-b {
+  border-bottom-color: var(--border-color) !important;
+}
+body.dark .border-white\/10 {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+body.dark .border-white\/20 {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+body.dark .divide-y > * + * {
+  border-color: var(--border-color) !important;
+}
+body.dark .h-\[1px\] {
+  background-color: var(--border-color) !important;
+}
+
+/* Map specific vector elements */
+body.dark .text-\[\#E5DED0\] {
+  color: #151413 !important;
+}
+body.dark svg[stroke="#C5BEB2"] {
+  stroke: #2E2C2A !important;
+}
+
+/* Dark mode buttons - background swap (no text color inheritance pollution on container divs) */
+body.dark .bg-\[\#1A1A1A\] {
+  background-color: var(--text-primary) !important;
+}
+body.dark button.bg-\[\#1A1A1A\],
+body.dark a.bg-\[\#1A1A1A\] {
+  color: var(--bg-primary) !important;
+}
+body.dark .bg-\[\#1A1A1A\]\/85 {
+  background-color: rgba(247, 243, 236, 0.85) !important;
+  color: var(--bg-primary) !important;
+}
+body.dark .bg-\[\#1A1A1A\]\/85 span {
+  color: var(--bg-primary) !important;
+}
+
+/* Fix active filter tab text contrast when placed next to active cream pill background */
+body.dark .bg-\[\#1A1A1A\] + span {
+  color: var(--bg-primary) !important;
+}
+
+/* Theme-adaptive bottom gradient in Hero */
+.hero-bottom-gradient {
+  background: linear-gradient(to top, #FBF8F3 0%, rgba(251, 248, 243, 0.6) 60%, transparent 100%);
+}
+body.dark .hero-bottom-gradient {
+  background: linear-gradient(to top, #0B0A0A 0%, rgba(11, 10, 10, 0.6) 60%, transparent 100%);
+}
+
+/* Orange explore button override specifically on dark theme */
+body.dark button.bg-\[\#FBF8F3\],
+body.dark a.bg-\[\#FBF8F3\] {
+  background-color: #C97A4A !important;
+  color: #FBF8F3 !important;
+}
+body.dark button.bg-\[\#FBF8F3\]:hover,
+body.dark a.bg-\[\#FBF8F3\]:hover {
+  background-color: #F7F3EC !important;
+  color: #0B0A0A !important;
+}
+
+/* Theme transition configuration */
+body, section, div, article, header, footer, button, input, select, textarea, span, p, h1, h2, h3, h4, h5, h6 {
+  transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
+}
