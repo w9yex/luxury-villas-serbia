@@ -58,13 +58,7 @@ export default function Hero() {
         {/* Spotlight background behind text for ultimate readability */}
         <div className="absolute inset-0 max-w-3xl mx-auto h-[120%] bg-[radial-gradient(circle,_rgba(10,10,10,0.8)_0%,_transparent_75%)] blur-[90px] -z-10 pointer-events-none transform -translate-y-12"></div>
 
-        {/* Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-[#C97A4A] animate-pulse"></span>
-          <span className="text-[11px] font-sans font-bold tracking-widest text-[#FBF8F3] uppercase">
-            🏡 Эксклюзивные виллы · Сербия
-          </span>
-        </div>
+
 
         {/* H1 Headline - Huge, Serif/Sans mix in Russian with text shadows */}
         <h1 className="font-serif text-5xl md:text-8xl font-medium tracking-tight text-[#FBF8F3] leading-[1.05] mb-6 hero-title-shadow">
