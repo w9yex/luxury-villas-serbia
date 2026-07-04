@@ -72,7 +72,7 @@ export default function Hero() {
 
         {/* Subtitle in Russian with text shadows for readability */}
         <p className="font-sans text-sm md:text-lg text-[#FBF8F3]/90 font-light max-w-2xl leading-relaxed mb-10 hero-desc-shadow">
-          Погрузитесь в атмосферу спокойствия и уединения. Эксклюзивные дизайнерские виллы с собственными бассейнами в окружении реликтовых сосновых лесов Златибора и каньонов Тары.
+          Погрузитесь в атмосферу  спокойствия и уединения. Эксклюзивные дизайнерские виллы с собственными бассейнами в окружении реликтовых сосновых лесов Златибора и каньонов Тары.
         </p>
 
         {/* CTA Button */}
