@@ -47,9 +47,13 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
       <header
         className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ease-in-out border-b ${
           isMobileMenuOpen
-            ? "bg-[#FBF8F3] dark:bg-[#0B0A0A] border-[#E5E1D8] dark:border-[#282624] py-4"
+            ? isDarkMode
+              ? "bg-[#0B0A0A] border-[#282624] py-4"
+              : "bg-[#FBF8F3] border-[#E5E1D8] py-4"
             : isScrolled
-            ? "bg-[#FBF8F3]/90 backdrop-blur-md border-[#E5E1D8] py-4 shadow-sm"
+            ? isDarkMode
+              ? "bg-[#0B0A0A]/90 backdrop-blur-md border-[#282624] py-4 shadow-sm"
+              : "bg-[#FBF8F3]/90 backdrop-blur-md border-[#E5E1D8] py-4 shadow-sm"
             : "bg-transparent border-transparent py-6"
         }`}
       >
@@ -64,7 +68,7 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
             <div
               className={`w-10 h-10 flex items-center justify-center transition-colors duration-500 ${
                 isMobileMenuOpen || isScrolled
-                  ? "text-[#1A1A1A] dark:text-[#FBF8F3]"
+                  ? isDarkMode ? "text-[#FBF8F3]" : "text-[#1A1A1A]"
                   : "text-[#FBF8F3]"
               }`}
             >
@@ -88,7 +92,7 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
               <span
                 className={`font-logo text-[10px] md:text-[11px] font-bold tracking-[0.25em] uppercase transition-colors duration-500 ${
                   isMobileMenuOpen || isScrolled
-                    ? "text-[#1A1A1A] dark:text-[#FBF8F3]"
+                    ? isDarkMode ? "text-[#FBF8F3]" : "text-[#1A1A1A]"
                     : "text-[#FBF8F3]"
                 }`}
               >
@@ -97,7 +101,7 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
               <span
                 className={`text-[8px] font-sans font-semibold tracking-[0.3em] uppercase -mt-0.5 transition-colors duration-500 ${
                   isMobileMenuOpen || isScrolled
-                    ? "text-[#8A8A8A] dark:text-[#C5BFB7]"
+                    ? isDarkMode ? "text-[#C5BFB7]" : "text-[#8A8A8A]"
                     : "text-[#FBF8F3]/60"
                 }`}
               >
@@ -119,7 +123,9 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
                 onClick={() => scrollToSection(item.id)}
                 className={`text-[13px] font-sans font-medium tracking-widest uppercase transition-colors duration-500 cursor-pointer ${
                   isScrolled
-                    ? "text-[#1A1A1A] hover:text-[#C97A4A]"
+                    ? isDarkMode
+                      ? "text-[#FBF8F3] hover:text-[#C97A4A]"
+                      : "text-[#1A1A1A] hover:text-[#C97A4A]"
                     : "text-[#FBF8F3] hover:text-[#C97A4A]"
                 }`}
               >
@@ -135,7 +141,9 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
               onClick={onToggleDarkMode}
               className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-300 mr-4 cursor-pointer focus:outline-none ${
                 isMobileMenuOpen || isScrolled
-                  ? "border-[#E5E1D8] dark:border-[#282624] text-[#1A1A1A] dark:text-[#FBF8F3] hover:bg-[#1A1A1A] dark:hover:bg-[#FBF8F3] hover:text-[#FBF8F3] dark:hover:text-[#1A1A1A] hover:border-transparent"
+                  ? isDarkMode
+                    ? "border-[#282624] text-[#FBF8F3] hover:bg-[#FBF8F3] hover:text-[#1A1A1A] hover:border-transparent"
+                    : "border-[#E5E1D8] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-[#FBF8F3] hover:border-transparent"
                   : "border-white/20 text-[#FBF8F3] hover:bg-white/15 hover:border-transparent"
               }`}
               title="Переключить тему"
@@ -160,7 +168,9 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
               }}
               className={`hidden sm:inline-flex relative items-center justify-center px-6 py-2.5 overflow-hidden font-sans text-xs font-semibold tracking-widest uppercase rounded-full group cursor-pointer border transition-all duration-500 ${
                 isMobileMenuOpen || isScrolled
-                  ? "bg-[#1A1A1A] dark:bg-[#F7F3EC] text-[#FBF8F3] dark:text-[#0B0A0A] border-transparent hover:shadow-lg"
+                  ? isDarkMode
+                    ? "bg-[#F7F3EC] text-[#0B0A0A] border-transparent hover:shadow-lg"
+                    : "bg-[#1A1A1A] text-[#FBF8F3] border-transparent hover:shadow-lg"
                   : "bg-[#FBF8F3] text-[#1A1A1A] border-transparent hover:shadow-lg"
               }`}
             >
@@ -175,7 +185,9 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`md:hidden w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-300 focus:outline-none cursor-pointer ${
                 isMobileMenuOpen || isScrolled
-                  ? "border-[#E5E1D8] dark:border-[#282624] text-[#1A1A1A] dark:text-[#FBF8F3] hover:bg-[#1A1A1A] dark:hover:bg-[#FBF8F3] hover:text-[#FBF8F3] dark:hover:text-[#1A1A1A] hover:border-transparent"
+                  ? isDarkMode
+                    ? "border-[#282624] text-[#FBF8F3] hover:bg-[#FBF8F3] hover:text-[#1A1A1A] hover:border-transparent"
+                    : "border-[#E5E1D8] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-[#FBF8F3] hover:border-transparent"
                   : "border-white/20 text-[#FBF8F3] hover:bg-white/15 hover:border-transparent"
               }`}
               aria-label="Toggle mobile menu"
@@ -210,10 +222,16 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed inset-0 w-full h-screen bg-[#FBF8F3] dark:bg-[#0B0A0A] z-30 flex flex-col items-center justify-center px-8"
+            className={`fixed inset-0 w-full h-screen z-30 flex flex-col items-center justify-center px-8 ${
+              isDarkMode ? "bg-[#0B0A0A]" : "bg-[#FBF8F3]"
+            }`}
           >
             {/* Elegant Grid Lines overlay on mobile menu background */}
-            <div className="absolute inset-0 grid grid-cols-5 pointer-events-none opacity-20 dark:opacity-10">
+            <div
+              className={`absolute inset-0 grid grid-cols-5 pointer-events-none ${
+                isDarkMode ? "opacity-10" : "opacity-20"
+              }`}
+            >
               {[...Array(4)].map((_, i) => (
                 <div key={i} className="border-r border-[#C97A4A] border-dashed h-full" />
               ))}
@@ -238,7 +256,9 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
                       scrollToSection(item.id);
                     }, 300);
                   }}
-                  className="text-3xl font-serif font-medium tracking-[0.1em] text-[#1A1A1A] dark:text-[#FBF8F3] hover:text-[#C97A4A] dark:hover:text-[#C97A4A] transition-colors uppercase cursor-pointer"
+                  className={`text-3xl font-serif font-medium tracking-[0.1em] transition-colors uppercase cursor-pointer hover:text-[#C97A4A] ${
+                    isDarkMode ? "text-[#FBF8F3]" : "text-[#1A1A1A]"
+                  }`}
                 >
                   {item.label}
                 </motion.button>
