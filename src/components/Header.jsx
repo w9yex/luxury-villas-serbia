@@ -7,11 +7,13 @@ export default function Header({ onBookClick, isDarkMode, onToggleDarkMode }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = window.innerHeight;
-      // Triggers transparency when scrolling into the FinalCTA area (bottom 1150px range of the document)
-      const isAtBottom = winHeight + window.scrollY >= docHeight - 1150;
-      if (window.scrollY > 50 && !isAtBottom) {
+      const finalCta = document.getElementById("final-cta");
+      let isAtFinalCta = false;
+      if (finalCta) {
+        const rect = finalCta.getBoundingClientRect();
+        isAtFinalCta = rect.top <= 80;
+      }
+      if (window.scrollY > 50 && !isAtFinalCta) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);

@@ -26,6 +26,7 @@ export default function FinalCTA() {
 
   return (
     <section
+      id="final-cta"
       ref={containerRef}
       className="relative w-full h-screen flex items-center justify-center overflow-hidden z-20 bg-[#FBF8F3]"
     >
