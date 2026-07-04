@@ -57,9 +57,7 @@ export default function Hero() {
       >
         {/* Spotlight background behind text for ultimate readability */}
         <div className="absolute inset-0 max-w-3xl mx-auto h-[120%] bg-[radial-gradient(circle,_rgba(10,10,10,0.8)_0%,_transparent_75%)] blur-[90px] -z-10 pointer-events-none transform -translate-y-12"></div>
-
-
-
+        {/* Removed Pill Badge */}
         {/* H1 Headline - Huge, Serif/Sans mix in Russian with text shadows */}
         <h1 className="font-serif text-5xl md:text-8xl font-medium tracking-tight text-[#FBF8F3] leading-[1.05] mb-6 hero-title-shadow">
           Скрытая роскошь <br />
