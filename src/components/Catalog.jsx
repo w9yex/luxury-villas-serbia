@@ -90,6 +90,12 @@ export const villasData = [
   }
 ];
 
+const getImageUrl = (imgSrc) => {
+  if (!imgSrc) return "";
+  if (imgSrc.startsWith("http")) return imgSrc;
+  return `${import.meta.env.BASE_URL}${imgSrc}`;
+};
+
 export default function Catalog({ onSelectVilla }) {
   const [selectedCategory, setSelectedCategory] = useState("все");
   const scrollContainerRef = useRef(null);
@@ -215,7 +221,7 @@ export default function Catalog({ onSelectVilla }) {
                 {/* Image Container */}
                 <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#E5E1D8] shadow-md group-hover:shadow-xl transition-all duration-500 bg-[#FBF8F3]">
                   <img
-                    src={villa.mainImage}
+                    src={getImageUrl(villa.mainImage)}
                     alt={villa.name}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
                   />

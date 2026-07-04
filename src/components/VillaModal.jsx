@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, CheckCircle2, Star, ShieldCheck, Mail, Calendar, User } from "lucide-react";
 
+const getImageUrl = (imgSrc) => {
+  if (!imgSrc) return "";
+  if (imgSrc.startsWith("http")) return imgSrc;
+  return `${import.meta.env.BASE_URL}${imgSrc}`;
+};
+
 export default function VillaModal({ villa, onClose }) {
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   const [direction, setDirection] = useState(0); // 1 = next (slide left), -1 = prev (slide right)
@@ -79,7 +85,7 @@ export default function VillaModal({ villa, onClose }) {
             <AnimatePresence initial={false} custom={direction}>
               <motion.img
                 key={activeImageIdx}
-                src={villa.images[activeImageIdx]}
+                src={getImageUrl(villa.images[activeImageIdx])}
                 alt={`${villa.name} slide`}
                 custom={direction}
                 variants={slideVariants}

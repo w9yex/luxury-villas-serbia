@@ -34,7 +34,7 @@ export default function Hero() {
       {/* Full-bleed Background Image & Composite Overlays with Parallax */}
       <div className="absolute inset-0 z-0">
         <motion.img
-          src="main.png"
+          src={`${import.meta.env.BASE_URL}main.png`}
           alt="Роскошная вилла в Сербии"
           style={{ y: yBg, scale: scaleBg }}
           className="w-full h-full object-cover object-center origin-center"

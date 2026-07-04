@@ -35,6 +35,12 @@ export const locationsData = [
   }
 ];
 
+const getImageUrl = (imgSrc) => {
+  if (!imgSrc) return "";
+  if (imgSrc.startsWith("http")) return imgSrc;
+  return `${import.meta.env.BASE_URL}${imgSrc}`;
+};
+
 export default function Locations({ selectedLoc, setSelectedLoc }) {
   const scrollContainerRef = useRef(null);
 
@@ -155,7 +161,7 @@ export default function Locations({ selectedLoc, setSelectedLoc }) {
               {/* Image box */}
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-[#E5E1D8] shadow-sm mb-6 bg-[#F7F3EC]">
                 <img
-                  src={loc.image}
+                  src={getImageUrl(loc.image)}
                   alt={loc.name}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
                 />
@@ -220,7 +226,7 @@ export default function Locations({ selectedLoc, setSelectedLoc }) {
               {/* Full-bleed Header landscape image background */}
               <div className="h-[240px] relative w-full shrink-0 flex items-end p-8 bg-[#1A1A1A]">
                 <img
-                  src={selectedLoc.image}
+                  src={getImageUrl(selectedLoc.image)}
                   alt={selectedLoc.name}
                   className="absolute inset-0 w-full h-full object-cover object-center opacity-75"
                 />
@@ -262,7 +268,7 @@ export default function Locations({ selectedLoc, setSelectedLoc }) {
                         className="flex gap-4 p-4 rounded-xl border border-[#E5E1D8] bg-[#F7F3EC]/50 hover:bg-[#F7F3EC] transition-colors duration-300 group"
                       >
                         <img
-                          src={v.img}
+                          src={getImageUrl(v.img)}
                           alt={v.name}
                           className="w-16 h-16 object-cover rounded-lg shrink-0 border border-[#E5E1D8]"
                         />
