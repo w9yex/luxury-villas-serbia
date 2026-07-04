@@ -62,9 +62,9 @@ export const villasData = [
     location: "Фрушка-Гора",
     price: 490,
     category: "винодельни",
-    mainImage: "/villa-lavender.png",
+    mainImage: "villa-lavender.png",
     images: [
-      "/villa-lavender.png",
+      "villa-lavender.png",
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&h=800&q=80",
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&h=800&q=80"
     ],
@@ -78,9 +78,9 @@ export const villasData = [
     location: "Озеро Палич",
     price: 580,
     category: "у воды",
-    mainImage: "/villa-palic.png",
+    mainImage: "villa-palic.png",
     images: [
-      "/villa-palic.png",
+      "villa-palic.png",
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&h=800&q=80",
       "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&h=800&q=80"
     ],

@@ -84,7 +84,7 @@ export default function Locations({ selectedLoc, setSelectedLoc }) {
           name: "Винная вилла Лаванда (Lavender Wine Villa)",
           price: "€490 / сутки",
           specs: "4 спальни · виноградники · дегустационный зал",
-          img: "/villa-lavender.png"
+          img: "villa-lavender.png"
         }
       ];
     } else {
@@ -93,7 +93,7 @@ export default function Locations({ selectedLoc, setSelectedLoc }) {
           name: "Озерный павильон Палич (Palić Lake Pavilion)",
           price: "€580 / сутки",
           specs: "5 спален · собственный причал · спа-кабинет",
-          img: "/villa-palic.png"
+          img: "villa-palic.png"
         }
       ];
     }

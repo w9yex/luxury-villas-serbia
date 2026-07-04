@@ -93,7 +93,7 @@ export default function BespokeCalculator({ onBookPackage }) {
           selectedVillaIdx === 0 ? "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" :
           selectedVillaIdx === 1 ? "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" :
           selectedVillaIdx === 2 ? "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80" :
-          selectedVillaIdx === 3 ? "/villa-lavender.png" : "/villa-palic.png"
+          selectedVillaIdx === 3 ? "villa-lavender.png" : "villa-palic.png"
         ]
       };
       onBookPackage(mockVillaObj);
